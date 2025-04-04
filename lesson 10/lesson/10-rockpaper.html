@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rock Paper Scissors</title>
+        
+        <link rel="stylesheet" href="10-rockpaper.css">
+
+    
+    </head>
+    <body>
+        <h1>Rock Paper Scissors</h1>
+
+        <button onclick="
+            computerspick(); 
+            playersmove('rock');    
+        "   class="Rock">
+            <img src="rock.png" class="rock-image">
+        </button>
+
+        <button onclick="           
+            computerspick();
+            playersmove('paper');
+        "   class="paper">
+            <img src="paper.png" class="paper-image">
+        </button>
+
+        <button onclick=" 
+            computerspick();
+            playersmove('scissors');"   class="paper">
+            <img src="scissors.png" class="scissors-image">
+        </button>
+        <p class="js-result" style="font-weight: bold;
+        font-size: 30px;"></p>
+        <p class="js-moves" style="margin-bottom: 50px;"></p>
+        <p class="js-scoresheet"></p>
+        <button onclick="
+        score.wins= 0;
+        score.losses=0;
+        score.ties=0;
+        localStorage.removeItem('score');
+        updateScore()
+        " class="reset-score">
+            Reset Score
+        </button>
+
+        <script src="10-rockpaper.js"></script>
+    </body>
+</html>

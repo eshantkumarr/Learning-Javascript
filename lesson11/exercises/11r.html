@@ -1,0 +1,25 @@
+        <!DOCTYPE html>
+        <html>
+            <head></head>
+            <body></body>
+            <script>    
+            let array = ['apple', 'grape', 'apple', 'apple', 'search'];  
+        function removeEgg(array){
+            let array2 = [];
+            for(let i =0; i < array.length; i++){
+                const value = array[i];
+                if(value === 'egg'){
+                    continue;
+                }/*else {
+                    array2.push(value);
+                }*/
+                 // We don't need to have an else here because
+                // the only way to reach this code is if the 
+                // if-statement above is false.
+                array2.push(value);
+            }
+            return (array2);
+            }
+            cosnole.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']));
+            </script>
+        </html>

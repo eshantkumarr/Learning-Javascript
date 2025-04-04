@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM PROJECTS</title>
+        <style>
+            .errormessage{
+                color: red;
+            }
+        </style>
+    </head>
+    <body>  
+      <div>
+              </div>
+                <div style="margin-top: 50px;">  
+                      <h2>Amazon shipping Calculator</h2>
+                      <p>Orders under $40 = +$10 shipping.</p>
+                      <p>Orders over $40 = FREE shipping.</p>
+                      <input placeholder="cost of order" class="js-costoforder" onkeydown="enterfunc();" >
+                      <button onclick="calculatePrice();">Calculate</button>
+                      <p class="js-price" ></p>
+                      <p class="errormessage"></p>
+                </div>
+                
+
+
+    </body>
+    <script>
+
+            
+            
+function enterfunc(){
+              if (event.key=== 'Enter'){
+                calculatePrice();
+              }
+
+            }
+            function calculatePrice() {
+                document.querySelector('.js-price').innerHTML = '';
+                document.querySelector('.errormessage').innerHTML = '';
+
+
+            const inputValue = document.querySelector('.js-costoforder');
+
+              console.log(inputValue.value);
+              
+
+              let cost = Number(inputValue.value);
+            if (cost < 0){  
+                cost = 'error : cost cannot be less than 0$';
+                document.querySelector('.errormessage').innerHTML = 'error: the cost can not be less than 0$';
+                return;
+
+            }else if(cost < 40){
+                cost= (Math.round((cost + 10) * 100) / 100 );
+                
+              }
+              
+              document.querySelector('.js-price').innerHTML = `$${cost}`;
+            }
+           
+            // orrrrrr u can write it like this 
+            /*Issue = the calculation is inaccurate.
+                    Fix = calculate the number in cents and then
+                    convert back to dollars at the end.
+    
+                    function calculateTotal() {
+                    const inputElement = document.querySelector('.js-cost-input');
+
+                    // Convert the numbers to cents by * 100.
+                    let cost = Number(inputElement.value) * 100;
+
+                    if (cost < 4000) {
+                    cost = cost + 1000;
+                    }
+
+                    // Convert back to dollars at the end.
+                    document.querySelector('.js-total-cost')
+                    .innerHTML = `$${cost / 100}`;
+                    }
+            */
+           
+        
+    </script>
+</html>

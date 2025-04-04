@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body></body>
+    <script>    
+      let array = ['apple', 'grape', 'apple', 'apple', 'search'];
+
+
+
+      
+function findIndex(array, word){
+    // let a = -1;
+    for(let i =0; i < array.length; i++){
+        // const value = array[i];
+
+        if(array[i] === word){
+           return i;
+            break;
+        }
+
+    }
+        return -1;
+    }
+
+ findIndex(array, 'apple');
+ findIndex(['not', 'found'], 'search');
+ findIndex(['hello', 'world', 'search', 'good', 'search'], 'search');
+
+
+
+
+    </script>
+</html><!--approved-->

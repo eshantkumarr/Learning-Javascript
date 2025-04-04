@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM PROJECTS</title>
+        <style>
+          .Subscribe-button {
+            /*width: 85px;
+            height: 35px;*/
+            border-radius: 50px;
+            border-style: none;
+            padding: 10px 15px 10px 15px; /* top right bottom left*/
+            background-color: black;
+            color: aliceblue;
+            font-weight: bold;
+
+          }
+          .is-subscribed{
+            background-color: aliceblue;
+            color: black;
+          }
+          body{
+            font-family: Arial;
+            padding-bottom: 100px;
+          }
+          .costoforder{
+            padding: 10px;
+          }
+          .Calculate-button{
+            padding: 11px;
+            border-radius: 0;
+            border: none;
+            background-color: rgb(0, 172, 0);
+            color: white;
+            font-size:15px;
+            cursor: pointer;
+          }
+
+        </style>
+    </head>
+    <body>  
+      <div>
+                <h1>Youtube Subscribe Button</h1>
+                <button class="Subscribe-button" 
+                onclick="
+                subscribe()
+                ">
+                Subscribe
+                </button> 
+              </div>
+                <div style="margin-top: 50px;">  
+                      <h2>Amazon shipping Calculator</h2>
+                      <p>Orders under $40 = +$10 shipping.</p>
+                      <p>Orders over $40 = FREE shipping.</p>
+                      <input placeholder="cost of order" class="js-costoforder costoforder" onkeydown="enterfunc();" >
+                      <button onclick="calculatePrice(); " class="Calculate-button">Calculate</button>
+                      <p class="js-price" ></p>
+                </div>
+                
+
+
+    </body>
+    <script>
+            function subscribe() {
+                const button1= document.querySelector('.Subscribe-button');
+            
+            /*
+            if (button1.innerHTML === 'Subscribe'){
+                button1.innerHTML = 'Subscribed';
+            }else if (button1.innerHTML === 'Subscribed'){
+                button1.innerHTML = 'Subscribe';
+                }
+                */
+                if (button1.innerText === 'Subscribe'){
+                button1.innerHTML = 'Subscribed';
+                button1.classList.add('is-subscribed');
+                          }else if (button1.innerText === 'Subscribed'){
+                button1.innerHTML = 'Subscribe';
+                button1.classList.remove('is-subscribed');
+                }
+            }
+            
+            
+            
+            function calculatePrice() {
+            const inputValue = document.querySelector('.js-costoforder');
+
+              console.log(inputValue.value);
+              
+
+              let cost = Number(inputValue.value);
+                
+              if(cost < 40){
+                cost+=10;
+              }
+              else if (cost >= 40){
+                cost=cost;
+              }
+              document.querySelector('.js-price').innerHTML = `$${cost}`;
+
+            }
+            function enterfunc(){
+              if (event.key=== 'Enter'){
+                calculatePrice();
+              }
+
+            }
+           
+        
+    </script>
+</html>

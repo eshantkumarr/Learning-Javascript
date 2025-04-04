@@ -1,0 +1,53 @@
+body{
+    background-color: rgb(25, 25, 25);
+    color: white;
+    font-family: Arial;
+}
+.Rock{
+   width: 120px;
+   height:120px;
+   border-radius: 60px;   
+   background-color: rgb(25, 25, 25);      
+   border-style: solid;
+   cursor: pointer;
+}
+.rock-image{
+ width: 75px;
+ height: 90px;
+ padding-bottom: 10px;
+}
+.paper{
+   width: 120px;
+   height:120px;
+   border-radius: 60px;   
+   background-color: rgb(25, 25, 25);      
+   border-style: solid;
+   cursor: pointer;
+}
+.paper-image{
+ width: 75px;
+ height: 90px;
+ padding-bottom: 10px;
+}
+.scissors{
+   width: 120px;
+   height:120px;
+   border-radius: 60px;   
+   background-color: rgb(25, 25, 25);      
+   border-style: solid;
+   cursor: pointer;
+}
+.scissors-image{
+ width: 75px;
+ height: 90px;
+ padding-bottom: 10px;
+}
+.reset-score{
+    padding: 10px 15px 10px 15px;
+border-radius: 0;
+border: none;
+background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+font-size:15px;
+cursor: pointer;
+}

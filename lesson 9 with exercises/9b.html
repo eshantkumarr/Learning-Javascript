@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>lesson 9 exercise</title>
+    </head>
+    <body>
+        <button>9a</button>
+        <button class="js-9b" onclick="changetext();">9b</button>
+<script>
+            
+            const button9b = document.querySelector('.js-9b');
+            console.log(button9b.innerText);
+            function changetext() {
+                    if (button9b.innerText === '9b'){
+                    button9b.innerText = '9b done!'; 
+                }else if (button9b.innerText=== '9b done!'){
+                    button9b.innerText = '9b';
+                }
+            }
+       
+ </script>
+    </body>
+ 
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <input type="text" onkeyup="typingtest();"  class="input">
+        <p class="displayer"></p>
+    </body>
+    <script>
+        
+        function typingtest(){
+            const inputValue = document.querySelector('.input');
+            document.querySelector('.displayer').innerHTML= inputValue.value;
+        }
+    </script>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body></body>
+    <script>    
+      let array = ['green', 'red', 'blue', 'red'];
+     
+function findIndex(array, word){
+    let a = -1;
+    for(let i =0; i < array.length; i++){
+        const value = array[i];
+
+        if(value === word){
+            a  = i;
+            break;
+        }
+
+    }
+    if(a === -1){ return -1;}
+    else{
+        return a;
+    }
+}
+function unique(array){
+        let array2 = [];
+        for(let i = 0; i < array.length; i++){
+        const value = array[i];
+        
+        if (findIndex(array2, array[i]) === -1){
+            array2.push(value);
+            //console.log(value);
+        }
+    
+        }
+        console.log(array2);
+        }
+
+//  findIndex(array, 'apple');
+//  findIndex(['not', 'found'], 'search');
+//  findIndex(['hello', 'world', 'search', 'good', 'search'], 'search');
+
+    unique(array);
+    unique(['red', 'green', 'green', 'red']);
+
+
+    </script>
+</html><!--yeah yeah lets just goto sleep-->

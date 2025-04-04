@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body></body>
+    <script>    
+        let array = [1,-3,5];
+function minMax(array){
+    let maxvalue = array[0];
+    let minvalue = array[0];
+    for(i =0; i < array.length; i++){
+        const value = array[i];
+        if(value > maxvalue){
+            maxvalue = value;
+        }else if(value < minvalue){
+            minvalue = value;
+        }    
+     
+    }
+    const object ={
+        min: minvalue,
+        max: maxvalue
+    };
+    console.log(object);
+}
+minMax(array);
+minMax([-2, 3, -5, 7, 10]);
+    </script>
+</html>
+<!--approved-->
+<!--can be more efficient but i do it in the next exercise gng stop being tuff u aint him-->

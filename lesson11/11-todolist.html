@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>todo list
+            
+        </title>
+        <style>
+            body{
+                font-family: arial;
+            }
+            .todo-grid{
+                display: grid;
+                grid-template-columns: 184px 126px 53px;
+                column-gap: 10px;
+                row-gap: 10px;
+            }
+            .input-grid{
+                display: grid;
+                grid-template-columns: 184px 126px 53px;
+                column-gap: 10px;
+                row-gap: 10px;
+                
+            }
+        </style>
+    </head>
+    <body>
+            <p>Todo list 1<p>
+        <input type="text" placeholder="to do " class="todoinput-1"><button onclick=" handleTodoList1();">submit</button>
+            <p class="js-todo-viewer-1"></p>
+
+            <p>Todo list 2<p></p>
+            <input type="text" placeholder="to do " class="todoinput-2"><button onclick="handleTodoList2();">submit</button>
+            <p class="js-todo-viewer-2"></p>
+
+           
+            <p>Todo list 3</p>
+            <div class="input-grid">
+                <div>
+                    <input type="text" placeholder="to do " class="todoinput-3">
+                </div>
+                <div>
+                    <input type="date" class="js-date">
+                </div>
+                <button onclick="handleTodoList3();">submit</button>
+                <div class="js-todo-viewer-3 todo-grid"></div>
+            </div>
+
+
+
+    <script>
+                const todoListArray1 = [];
+        function handleTodoList1() {
+            const todoInput1 = document.querySelector('.todoinput-1');
+            
+            
+            todoListArray1.push(todoInput1.value);  
+            console.log(todoListArray1);          
+            // document.querySelector('.js-todo-viewer').innerHTML = todoInput1.value;
+        }
+
+        const todoListArray2 = [];
+        function handleTodoList2() {
+            const todoInput2 = document.querySelector('.todoinput-2');
+            todoListArray2.push(todoInput2.value);  
+
+            let todoHTML = '';
+            for (let i = 0; i < todoListArray2.length; i++) {
+                const todoItem = todoListArray2[i];
+                const html = `<p>${todoItem}</p>`;
+                todoHTML += html;
+            }
+
+            document.querySelector('.js-todo-viewer-2').innerHTML = todoHTML;
+            todoInput2.value = '';
+        }
+
+        const todoListArray3 = [];
+
+        function handleTodoList3() {
+            
+            const todoInput3 ={
+                name: document.querySelector('.todoinput-3').value,
+                date: document.querySelector('.js-date').value
+            };
+            
+            todoListArray3.push(todoInput3);  
+            // console.log(todoListArray3);
+
+            
+            rendertodolist3();
+            
+            
+       
+        }
+        function rendertodolist3() {
+            let todoHTML='';
+            for (let i = 0; i < todoListArray3.length; i++) {
+                const todoItem = todoListArray3[i];
+                const html = 
+                `
+                    <div class= "todoItem-name">${todoItem.name}</div>
+                     <div class= "todoItem-date">${todoItem.date}</div>
+                        <button 
+                        class="delete-button"
+                        onclick=
+                            "todoListArray3.splice(${i}, 1); rendertodolist3();"
+                        >Delete</button>
+                        
+                    
+                 `;
+                todoHTML += html;
+            }
+            document.querySelector('.js-todo-viewer-3').innerHTML = todoHTML;
+            
+        }
+        
+    </script>    
+    </body>
+</html>

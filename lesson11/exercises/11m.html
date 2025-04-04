@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body></body>
+    <script>    
+        let array = [1,-3,5];
+function minMax(array){
+    const object ={
+        min: array[0],
+        max: array[0]
+    };
+    for(i =0; i < array.length; i++){
+        const value = array[i];
+
+        if(value >= object.max){
+            object.max = value;
+        }else if(value <= object.min){
+            object.min = value;
+        }
+    }
+    if (object.min === undefined){
+        object.min = null
+    } if (object.max === undefined){
+        object.max = null;
+    }
+ 
+    console.log(object);
+}
+minMax(array);
+minMax([-2, 3, -5, 7, 10]);
+minMax([3]);
+minMax([]);
+    </script>
+</html>

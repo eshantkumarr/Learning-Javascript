@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator</title>
+    <style>
+      body{
+        background-color: black;
+        font-family: Arial;
+      }
+      .gray-button{
+        background-color: gray;
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        color: white;
+        font-weight: bold;
+      }
+      .yellow-button{
+        background-color: orange;
+        border: none;
+        width: 35px;
+        height: 35px;
+        border-radius: 17px;
+        color: white;
+        font-weight: bold;
+      }
+      .screen{
+        color: white;
+        font-size: larger;
+        margin-top: 50px;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <!-- Code changes are at the bottom. -->
+     <p class="screen"></p>
+    <p>
+      <button onclick="
+        updateCalculation('1');
+      " class="gray-button">1</button>
+
+      <button onclick="
+        updateCalculation('2');
+      " class="gray-button">2</button>
+
+      <button onclick="
+        updateCalculation('3');
+      " class="gray-button">3</button>
+
+      <button onclick="
+        updateCalculation(' + ');
+      " class="yellow-button">+</button>
+    </p>
+
+    <p>
+      <button onclick="
+        updateCalculation('4');
+      " class="gray-button">4</button>
+
+      <button onclick="
+       updateCalculation('5');
+      "class="gray-button">5</button>
+
+      <button onclick="
+        updateCalculation('6');
+      " class="gray-button">6</button>
+
+      <button onclick="
+        updateCalculation(' - ');
+      " class="yellow-button">-</button>
+    </p>
+
+    <p>
+      <button onclick="
+        updateCalculation('7');
+      " class="gray-button">7</button>
+
+      <button onclick="
+        updateCalculation('8');
+      " class="gray-button">8</button>
+
+      <button onclick="
+        updateCalculation('9');
+      " class="gray-button">9</button>
+
+      <button onclick="
+        updateCalculation(' * ');
+      " class="yellow-button">*</button>
+    </p>
+
+    <p>
+      <button onclick="
+        updateCalculation('0');
+      " class="gray-button">0</button>
+
+      <button onclick="
+        updateCalculation('.');
+      " class="gray-button">.</button>
+
+      <button onclick="
+        // Note: eval() takes a string and runs it as code.
+        // Avoid using eval() in real world projects since
+        // it can potentially be given harmful code to run.
+        // Only use eval() for learning purposes.
+        calculation = eval(calculation);
+        document.querySelector('.screen').innerHTML = calculation;
+
+        // Remember to save the calculation here.
+        localStorage.setItem('calculation', calculation);
+      " class="gray-button">=</button>
+
+      <button onclick="
+        updateCalculation(' / ');
+      " class="yellow-button">/</button>
+    </p>
+
+    <p>
+      <button onclick="
+        calculation = '';
+        document.querySelector('.screen').innerHTML = calculation;
+
+        // Remember to save the calculation here.
+        localStorage.setItem('calculation', calculation);
+      " class="gray-button">Clear</button>
+    </p>
+
+    <script>
+        
+      let calculation = localStorage.getItem('calculation') || '';
+      document.querySelector('.screen').innerHTML = calculation;
+      
+      function updateCalculation(value) {
+        calculation += value;
+        document.querySelector('.screen').innerHTML = calculation;
+        localStorage.setItem('calculation', calculation);
+      }
+
+      // Optional: you can also create a function in order
+      // to reuse this code.
+      function saveCalculation() {
+        localStorage.setItem('calculation', calculation);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            rock paper scissors
+        </title>
+    </head>
+    <body>
+        <h1>Rock Paper Scissors</h1>
+
+        <button onclick="  playerspick = 'Rock'; console.log(playerspick); 
+        
+        randomNumebr = Math.random();            
+            
+            if (randomNumebr > 0 & randomNumebr < (1 / 3) ){
+                 computerspick = 'rock';
+            } else if (randomNumebr > (1 / 3)  & randomNumebr < (2 / 3) ){
+                 computerspick = 'scissors';
+            }else if  (randomNumebr >  (2 / 3) & randomNumebr < 1 ){
+                 computerspick = 'paper';
+            }
+
+            if (computerspick === 'rock'){
+                result = ' It is a Tie'
+            } else if (computerspick === 'Paper'){
+                result = 'You loose'
+            } else if (computerspick === 'scissors'){
+                result = 'You Win'
+            }
+
+            alert(`you picked ${playerspick}, and the computer picked  ${computerspick}.${result}`);
+        
+        ">
+            Rock
+        </button>
+
+        <button onclick="  playerspick = 'paper'; console.log(playerspick);
+        
+        let randomNumebr = Math.random();
+            
+
+            if (randomNumebr > 0 & randomNumebr < (1 / 3) ){
+                 computerspick = 'rock';
+            } else if (randomNumebr > (1 / 3)  & randomNumebr < (2 / 3) ){
+                 computerspick = 'scissors';
+            }else if  (randomNumebr >  (2 / 3) & randomNumebr < 1 ){
+                 computerspick = 'paper';
+            }
+
+            if (computerspick === 'paper'){
+                result = ' It is a Tie'
+            } else if (computerspick === 'scissors'){
+                result = 'You loose'
+            } else if (computerspick === 'rock'){
+                result = 'You Win'
+            }
+
+            alert(`you picked ${playerspick}, and the computer picked  ${computerspick}.${result}`);
+        
+        ">
+            paper
+        </button>
+
+        <button onclick="  playerspick = 'scissors' ; console.log(playerspick); 
+        
+         randomNumebr = Math.random();
+
+            if (randomNumebr > 0 & randomNumebr < (1 / 3) ){
+                 computerspick = 'rock';
+            } else if (randomNumebr > (1 / 3)  & randomNumebr < (2 / 3) ){
+                 computerspick = 'scissors';
+            }else if  (randomNumebr >  (2 / 3) & randomNumebr < 1 ){
+                 computerspick = 'paper';
+            }
+            
+            if (computerspick === 'scissors'){
+                result = ' It is a Tie'
+            } else if (computerspick === 'rock'){
+                result = 'You loose'
+            } else if (computerspick === 'paper'){
+                result = 'You Win'
+            }
+
+            alert(`you picked ${playerspick}, and the computer picked  ${computerspick}.${result}`);
+        
+        ">
+            Scissors
+        </button>
+        <script>
+            
+            let computerspick = '';
+            let result = '';
+            
+
+            
+        </script>
+    </body>
+</html>

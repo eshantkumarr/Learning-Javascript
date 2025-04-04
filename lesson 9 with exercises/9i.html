@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <!--<button onclick="document.querySelector('.quantity').innerHTML= CartQuantity;">Show quantity</button> what even is the point of this-->
+    <button onclick="updateCart(1)">Add to cart</button>
+    <button onclick="updateCart(2)">+2</button>
+    <button onclick="updateCart(3)">+3</button>
+    <button onclick="updateCart(4)">+4</button>
+    <button onclick="updateCart(5)"> +5</button>
+    <button onclick="updateCart(-1)">Remove from cart</button>
+    <button onclick="updateCart(-2)">-2</button>
+    <button onclick="updateCart(-3)">-3</button>
+    <button onclick="localStorage.removeItem('CartQuantity'); CartQuantity=0;  document.querySelector('.quantity').innerHTML= CartQuantity;">Reset cart </button>
+    <p class="quantity"></p>
+    
+    
+    <script>
+        
+      let CartQuantity = JSON.parse(localStorage.getItem('CartQuantity'))|| 0;
+      document.querySelector('.quantity').innerHTML = CartQuantity;
+      function updateCart (quantity){
+
+        CartQuantity= CartQuantity + quantity;
+
+        if (CartQuantity>=0 && CartQuantity<=10){
+            document.querySelector('.quantity').innerHTML= CartQuantity;  localStorage.setItem('CartQuantity', JSON.stringify(CartQuantity));
+      }else if(CartQuantity < 0) {
+        alert('cart empty');
+      }else if(CartQuantity > 10){
+        alert('the cart is full');
+      }
+
+      }
+
+    </script>
+  </body>
+</html>

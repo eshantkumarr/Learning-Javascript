@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM PROJECTS</title>
+    </head>
+    <body>  
+      <div>
+                <h1>Youtube Subscribe Button</h1>
+                <button class="Subscribe-button" 
+                onclick="
+                subscribe()
+                ">
+                Subscribe
+                </button> 
+              </div>
+                <div style="margin-top: 50px;">  
+                      <h2>Amazon shipping Calculator</h2>
+                      <p>Orders under $40 = +$10 shipping.</p>
+                      <p>Orders over $40 = FREE shipping.</p>
+                      <input placeholder="cost of order" class="js-costoforder" onkeydown="enterfunc();" >
+                      <button onclick="calculatePrice();">Calculate</button>
+                      <p class="js-price" ></p>
+                </div>
+                
+
+
+    </body>
+    <script>
+            function subscribe() {
+                const button1= document.querySelector('.Subscribe-button');
+            
+            /*
+            if (button1.innerHTML === 'Subscribe'){
+                button1.innerHTML = 'Subscribed';
+            }else if (button1.innerHTML === 'Subscribed'){
+                button1.innerHTML = 'Subscribe';
+                }
+                */
+                if (button1.innerText === 'Subscribe'){
+                button1.innerHTML = 'Subscribed';
+            }else if (button1.innerText === 'Subscribed'){
+                button1.innerHTML = 'Subscribe';
+                }
+            }
+            
+            
+            
+            function calculatePrice() {
+            const inputValue = document.querySelector('.js-costoforder');
+
+              console.log(inputValue.value);
+              
+
+              let cost = Number(inputValue.value);
+                
+              if(cost < 40){
+                cost+=10;
+              }
+              else if (cost >= 40){
+                cost=cost;
+              }
+              document.querySelector('.js-price').innerHTML = `$${cost}`;
+
+            }
+            function enterfunc(){
+              if (event.key=== 'Enter'){
+                calculatePrice();
+              }
+
+            }
+           
+        
+    </script>
+</html>

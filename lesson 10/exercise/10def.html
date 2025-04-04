@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            button{
+                background-color: black;
+                padding: 10px;
+                color: rgb(255, 255, 255);
+                font-weight: bold;
+                border: none;
+                cursor: pointer;
+                border-radius: 5px;
+            }
+            .is-off{
+                background-color: rgb(255, 255, 255);
+                padding: 10px;
+                color: rgb(0, 0, 0);
+                font-weight: bold;
+                border: none;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <button onclick="off('.button1'/*,'.button2', '.button3'*/);"class="button1">gaming</button>
+        <button onclick="off('.button2'/*, '.button1', '.button3'*/);"class="button2">Music</button>
+        <button onclick="off('.button3'/*, '.button1', '.button2'*/);"class="button3">tech</button>
+
+
+    <script>
+       /* function off(classs, secondbutton, thridbutton){
+            if(!document.querySelector(classs).classList.contains('is-off')){
+                document.querySelector(classs).classList.add('is-off');
+                document.querySelector(secondbutton).classList.remove('is-off');
+                document.querySelector(thridbutton).classList.remove('is-off');
+            }else if(document.querySelector(classs).classList.contains('is-off'){
+                document.querySelector(classs).classList.remove('is-off');
+            }
+         }
+        
+            this is the better code because this just takes the button which was toggled and 
+            activates it if and uses diff function to turn off all other buttons by checking
+            if there exists a button with the class .is-off and not every single button one by one
+        
+        */
+        function off(classs){
+            const button = document.querySelector(classs);
+            if(!button.classList.contains('is-off')){
+                on();
+               button.classList.add('is-off');    
+            }else if(button.classList.contains('is-off')){
+               button.classList.remove('is-off');
+            }
+        }
+        function on(){
+            const previousbutton = document.querySelector('.is-off');
+            if (previousbutton){
+                previousbutton.classList.remove('is-off');
+            }
+        }
+    </script>
+    </body>
+</html>

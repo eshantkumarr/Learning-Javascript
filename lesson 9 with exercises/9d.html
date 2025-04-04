@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <input type="text" class="input" onkeyup="enterfunc();"><button onclick="document.querySelector('.yourname').innerHTML= `your name is ${inputValue.value}`;">submit</button>
+        <p class="yourname"></p>
+        
+        
+        
+        <script>
+             const inputValue = document.querySelector('.input');
+            function enterfunc(){
+                if (event.key === 'Enter'){
+                    document.querySelector('.yourname').innerHTML= `your name is ${inputValue.value}`;
+                }
+            }
+        </script>
+
+    </body>
+</html>

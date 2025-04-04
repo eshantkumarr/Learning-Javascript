@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body></body>
+    <script>    
+      let array = ['apple', 'grape', 'apple', 'apple', 'search'];
+
+
+
+      
+function countWords(array){
+    let a = -1;
+    for(let i =0; i < array.length; i++){
+        const value = array[i];
+
+        if(value === 'search'){
+            a  = i;
+            break;
+        }
+
+    }
+    if(a === -1){ console.log(a);}
+    else{
+        console.log(a);
+    }
+}
+ countWords(array);
+ countWords(['not', 'found']);
+countWords(['hello', 'world', 'search', 'good', 'search']);
+
+
+
+
+    </script>
+</html><!--approved-->

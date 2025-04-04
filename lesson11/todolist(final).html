@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>todo list
+            
+        </title>
+        <style>
+            body{
+                font-family: arial;
+            }
+                .todo-grid{
+                    display: grid;
+                    grid-template-columns: 200px 150px 100px;
+                    column-gap: 10px;
+                    row-gap: 10px;
+                    align-items: center;
+            }
+            .input-grid{
+                display: grid;
+                grid-template-columns: 200px 150px 100px;
+                column-gap: 10px;
+                row-gap: 10px;
+            }
+            .name-input{
+              padding: 6px;
+            }            
+            .dateinput{
+                padding: 6px;
+            }
+            .submit-button{
+                padding: 6px;
+                color: white;
+                background-color: green;
+                border: none;
+                cursor: pointer;
+            }
+            .delete-button{
+                padding: 8px;
+                color:white;
+                background-color: darkred;
+                border: none;
+                cursor: pointer;
+            }
+
+        </style>
+    </head>
+    <body>
+           
+
+           
+            <h1>Todo list 3</h1>
+            <div class="input-grid">
+                <div>
+                    <input type="text" placeholder="to do " class="todoinput-3 name-input">
+                </div>
+                <div>
+                    <input type="date" class="js-date dateinput">
+                </div>
+                <button 
+                class="submit-button"
+                onclick="handleTodoList3();">Add</button>
+                <div class="js-todo-viewer-3 todo-grid"></div>
+            </div>
+
+
+
+    <script>
+         
+        const todoListArray3 = [];
+
+        function handleTodoList3() {
+            const name = document.querySelector('.todoinput-3');
+            const date = document.querySelector('.js-date');
+            const todoInput3 ={
+                name :name.value,
+                date : date.value
+            };
+            
+            todoListArray3.push(todoInput3);  
+            // console.log(todoListArray3);
+
+            
+            rendertodolist3();
+            name.value   ='';
+            date.value  = '';
+        }
+        function rendertodolist3() {
+            let todoHTML='';
+            for (let i = 0; i < todoListArray3.length; i++) {
+                const todoItem = todoListArray3[i];
+                const html = 
+                `
+                    <div class= "todoItem-name">${todoItem.name}</div>
+                     <div class= "todoItem-date">${todoItem.date}</div>
+                        <button 
+                        class="delete-button"
+                        onclick=
+                            "todoListArray3.splice(${i}, 1); rendertodolist3();"
+                        >Delete</button>
+                        
+                    
+                 `;
+                todoHTML += html;
+            }
+            document.querySelector('.js-todo-viewer-3').innerHTML = todoHTML;
+            
+        }
+        
+    </script>    
+    </body>
+</html>

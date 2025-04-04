@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body></body>
+    <script>    
+      let array = ['apple', 'grape', 'apple', 'apple'];
+
+
+
+      
+function countWords(array){
+    let object= {}
+    
+    for(i =0; i < array.length; i++){
+        const value = array[i];
+
+        if(object[value] === undefined){
+            object[value] = 1;
+        }else {
+            object[value]++;
+        }
+     
+    }
+
+    return (object);
+}
+ console.log(countWords(array));
+
+
+
+
+
+
+
+    </script>
+</html><!--approved-->
