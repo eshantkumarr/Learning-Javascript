@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Advanced Function</title>
+    </head>
+    <body>
+        <script>
+            /*
+            function ad() {
+                console.log('hello');
+            }
+            ad();
+            
+            const function1 =   function ad() { 
+                console.log('hello2');
+            };
+            // if i remove ad()                                     it will be                                  callled a anonymous                                             function but still can be called because it is is inside a variable
+            console.log(function1);
+            console.log(typeof function1)
+            function1();
+                    //            we can also save functions inside a object and this will be called method 
+            const object = {
+                name: 'eshant',
+                fun : function (){
+                    console.log('fun');
+                }
+            };
+            object.fun();// fun
+            
+            function display(param){
+                console.log(param);
+            }
+            display(2);
+            //this is called passing a value  into a fucniton
+
+            // since function are also values we can pass them into a fuction
+
+            function run(param){
+                param();
+            }
+            run (function(){
+                console.log('param')
+            });*/
+            // setTimeout(function(){
+            //     console.log('timeout')
+            // }, 2000);
+            // console.log('next line');
+// settimeout is  a function of java script
+//that calls the first parameter and in the time specified in the
+// second parameter in milliseconds but it doesnt wait for the timer
+// it is goes to execute the line after the it and this makes out code asynchronus or somethin
+       /*     setInterval(function(){
+                console.log('interval')
+            }, 3000);
+            //what is does is that it executes the fist parameter 
+            // every 3 secs
+            console.log('afjaljdf'); */
+           ['hello', 'hello2', 'hello3'].forEach(function(value, index){
+            console.log(index, value);
+           }) // this is a shortcut for looping through the array
+        </script>
+    </body>
+</html>
