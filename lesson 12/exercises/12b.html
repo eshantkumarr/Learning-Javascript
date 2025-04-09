@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+
+    </head>
+    <body>
+        <script>
+             const add = function() {
+                console.log(2+3);
+              };
+              
+
+                function runtwice(parameter){
+                    parameter();
+                    parameter();
+                }
+                runtwice(function(){
+                    console.log('12b');
+                });
+                runtwice(add);
+        </script>
+      
+    </body>
+</html>

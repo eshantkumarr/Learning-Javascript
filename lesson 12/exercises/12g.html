@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title class="title">Add</title>
+    </head>
+    <body>
+        <script>
+           const title = document.querySelector('.title')
+           setInterval(function(){
+            if(title.innerHTML === 'Add'){
+                title.innerHTML = 'New Message(1)';
+            }else if(title.innerHTML === 'New Message(1)' ){
+                title.innerHTML = 'Add';
+            }
+            }
+           ,1000)
+      
+          
+           
+      </script>
+    </body>
+</html>

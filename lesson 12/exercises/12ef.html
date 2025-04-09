@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+
+    </head>
+    <body>
+        
+        <button class="button" onclick="
+        Finish() ">ADD TO CART</button>
+        <p class="js-display"></p>
+
+        <script>
+            
+            let intervalid;
+                function Finish(){
+                   const button = document.querySelector('.js-display');
+                   button.innerHTML = 'added';
+                   clearTimeout(intervalid);
+                    intervalid= setTimeout(function(){button.innerHTML=''},2000);
+                }
+           
+      </script>
+    </body>
+</html>

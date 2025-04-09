@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title class="title">Add</title>
+    </head>
+    <body>
+        <button onclick="++variable; console.log(variable);        ">add</button>
+        <button onclick="--variable; console.log(variable);        ">remove</button>
+        <script>
+           
+            let variable = 1;     
+            
+              
+           const title = document.querySelector('.title')
+           
+            setInterval(function(){
+            if(title.innerHTML === 'Add'){
+                title.innerHTML = `New Message(${variable})`;
+            }else {
+                title.innerHTML = 'Add';
+            }
+            }
+           , 1000)
+           
+           
+      </script>
+    </body>
+</html>

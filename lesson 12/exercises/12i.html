@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title class="title">Add</title>
+    </head>
+    <body>
+        <button onclick="++variable; console.log(variable);        ">add</button>
+        <button onclick="--variable; console.log(variable);        ">remove</button>
+        <script>
+           
+            let variable = 1;     
+           
+            setInterval(function(){
+                if(variable <= 0 ){
+                    document.title ='Add';
+                }else{
+                    if(document.title === 'Add'){
+                document.title = `New Message(${variable})`;
+                    }else {
+                        document.title = 'Add';
+                    }
+                }
+            }
+           , 1000)
+           
+           
+      </script>
+    </body>
+</html><!--works but having setinterval working all the time is not good u just have to put it inside a function and put it in onclick-->
