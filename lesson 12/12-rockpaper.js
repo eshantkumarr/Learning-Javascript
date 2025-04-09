@@ -9,7 +9,7 @@ updateScore()
 
 function autoplay(){
     if(!isAutoPlaying){
-        intervalId = setInterval(function(){
+        intervalId = setInterval(() => {
             const playerspick = computerspick();
             playersmove(playerspick);
            }, 1000);
@@ -32,7 +32,7 @@ function autoplay(){
 
 function playersmove(playerspick) {
     let result = '';
-    const computersmove = computerspick();; //  part a
+    const computersmove = computerspick(); //  part a
     if (playerspick === 'rock') {
         if (computersmove === 'rock') {
             result = 'It is a tie.';
@@ -95,5 +95,24 @@ function computerspick() {
     /* this code can work without part a part b and part c because when you dont declare a variable using let var or const in a function like i did in part b js automatically assumes it as a global variable which can be used in all variables thus the code worked but this isnt good practice that is why we did  part c and part a but instead of all this what we could have done is we would have done part b out all function and in the first line of script which would have made it a global variable
     :) */
 }
+
+document.querySelector('.Rock').addEventListener('click', () => {playersmove('rock')})
+document.body.addEventListener('keydown', (event) => {
+    if(event.key === 'r'){playersmove('rock')}
+    else if(event.key === 'p'){playersmove('paper')}
+    else if(event.key === 's'){playersmove('scissors')}
+    
+})
+
+document.querySelector('.paper').addEventListener('click', () => {playersmove('paper')})
+
+document.querySelector('.scissors').addEventListener('click', () => {playersmove('scissors')})
+
+document.querySelector('.reset-score').addEventListener('click', ()=> { score.wins= 0;
+    score.losses=0;
+    score.ties=0;
+    localStorage.removeItem('score');
+    updateScore()});
+document.querySelector('.autoplay').addEventListener('click', ()=> {autoplay(); } );
 
 

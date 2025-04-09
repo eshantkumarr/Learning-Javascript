@@ -10,40 +10,25 @@
     <body>
         <h1>Rock Paper Scissors</h1>
 
-        <button onclick="
-            computerspick(); 
-            playersmove('rock');    
-        "   class="Rock">
+        <button   class="Rock">
             <img src="rock.png" class="rock-image">
         </button>
 
-        <button onclick="           
-            computerspick();
-            playersmove('paper');
-        "   class="paper">
+        <button class="paper">
             <img src="paper.png" class="paper-image">
         </button>
 
-        <button onclick=" 
-            computerspick();
-            playersmove('scissors');"   class="paper">
+        <button class="scissors">
             <img src="scissors.png" class="scissors-image">
         </button>
         <p class="js-result" style="font-weight: bold;
         font-size: 30px;"></p>
         <p class="js-moves" style="margin-bottom: 50px;"></p>
         <p class="js-scoresheet"></p>
-        <button onclick="
-        score.wins= 0;
-        score.losses=0;
-        score.ties=0;
-        localStorage.removeItem('score');
-        updateScore()
-        " class="reset-score">
+        <button class="reset-score">
             Reset Score
         </button>
-       <button class="js-autoplay autoplay" onclick=" 
-       autoplay();"           
+       <button class="js-autoplay autoplay"          
         >Auto play</button> 
 
         <script src="12-rockpaper.js"></script>

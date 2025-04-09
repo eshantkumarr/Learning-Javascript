@@ -4,7 +4,16 @@
         <title>Advanced Function</title>
     </head>
     <body>
+        <button onclick="//wrtie some javascript" class="js-button">click</button>
         <script>
+            const buttonElem = document.querySelector('.js-button');
+            buttonElem.addEventListener('click', () => {buttonElem.innerHTML = 'ckicked';});
+            const EventListener = () => {
+                buttonElem.innerHTML = 'ckiced2';
+            }
+            buttonElem.addEventListener('click', EventListener);
+            buttonElem.removeEventListener('click', EventListener);
+            //addeventlistener is more preferred than onclicked because we can use multiple of them and can even remove them
             /*
             function ad() {
                 console.log('hello');
@@ -55,9 +64,37 @@
             //what is does is that it executes the fist parameter 
             // every 3 secs
             console.log('afjaljdf'); */
-           ['hello', 'hello2', 'hello3'].forEach(function(value, index){
+           ['hello', 'hello2', 'hello3'].forEach((value, index) => {
             console.log(index, value);
            }) // this is a shortcut for looping through the array
+           const regularfunction= function(){
+            console.log('hello');
+           }
+           regularfunction();
+           const arrowfunction = () =>{
+            console.log('hello');
+            
+           }
+           arrowfunction();
+           //shortcut for a regular function here if we have one parameter then the brackets are optional
+           const oneParam = param => {
+            console.log(param - 1);
+           }
+           oneParam();
+           const oneLine = () => 2+3;
+           console.log(oneLine()); // 5
+
+
+           const object = {
+            method1: () => {
+                console.log('hello1')
+            },
+            method2 () {
+                console.log('hello');
+            }
+           }
+           object.method2();
+
         </script>
     </body>
 </html>

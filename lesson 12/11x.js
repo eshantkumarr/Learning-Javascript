@@ -4,7 +4,7 @@
     
     function rendertodolist3() {
         let todoHTML='';
-        todoListArray3.forEach(function(value, index){
+        todoListArray3.forEach((value, index) => {
             // const todoItem = todoListArray3[index];
             const html = 
             `
