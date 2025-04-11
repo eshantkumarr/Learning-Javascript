@@ -64,37 +64,46 @@
             //what is does is that it executes the fist parameter 
             // every 3 secs
             console.log('afjaljdf'); */
-           ['hello', 'hello2', 'hello3'].forEach((value, index) => {
-            console.log(index, value);
-           }) // this is a shortcut for looping through the array
-           const regularfunction= function(){
-            console.log('hello');
-           }
-           regularfunction();
-           const arrowfunction = () =>{
-            console.log('hello');
+        //    ['hello', 'hello2', 'hello3'].forEach((value, index) => {
+        //     console.log(index, value);
+        //    }) // this is a shortcut for looping through the array
+        //    const regularfunction= function(){
+        //     console.log('hello');
+        //    }
+        //    regularfunction();
+        //    const arrowfunction = () =>{
+        //     console.log('hello');
             
-           }
-           arrowfunction();
-           //shortcut for a regular function here if we have one parameter then the brackets are optional
-           const oneParam = param => {
-            console.log(param - 1);
-           }
-           oneParam();
-           const oneLine = () => 2+3;
-           console.log(oneLine()); // 5
+        //    }
+        //    arrowfunction();
+        //    //shortcut for a regular function here if we have one parameter then the brackets are optional
+        //    const oneParam = param => {
+        //     console.log(param - 1);
+        //    }
+        //    oneParam();
+        //    const oneLine = () => 2+3;
+        //    console.log(oneLine()); // 5
 
 
-           const object = {
-            method1: () => {
-                console.log('hello1')
-            },
-            method2 () {
-                console.log('hello');
-            }
-           }
-           object.method2();
+        //    const object = {
+        //     method1: () => {
+        //         console.log('hello1')
+        //     },
+        //     method2 () {
+        //         console.log('hello');
+        //     }
+        //    }
+        //    object.method2();
 
+           console.log([1,2,3,-8].filter((value, index) => {
+            // if (value >=0){
+            //     return true;
+            // }
+            return value>=0;
+
+           }));
+
+          console.log( [1,2,3].map(value=> {return value*2}));
         </script>
     </body>
 </html>

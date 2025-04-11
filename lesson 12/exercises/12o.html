@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>helo</title>
+    </head>
+    <body>
+        <script>
+            function removefoods(array){
+                let length = 0;
+        console.log(array.filter((value) => {
+                if(length < 2 && value === 'egg'){  length++;  console.log(length); return false;
+                    
+                }
+                else {return true;}
+            }));
+            }
+            removefoods(['egg', 'apple','egg','ham','egg']);
+        </script>
+      
+    </body>
+</html>

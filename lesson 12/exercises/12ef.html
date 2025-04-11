@@ -6,8 +6,7 @@
     </head>
     <body>
         
-        <button class="button" onclick="
-        Finish() ">ADD TO CART</button>
+        <button class="button">ADD TO CART</button>
         <p class="js-display"></p>
 
         <script>
@@ -17,8 +16,9 @@
                    const button = document.querySelector('.js-display');
                    button.innerHTML = 'added';
                    clearTimeout(intervalid);
-                    intervalid= setTimeout(function(){button.innerHTML=''},2000);
+                    intervalid= setTimeout(()=>{button.innerHTML=''},2000);
                 }
+                document.querySelector('.button').addEventListener('click', ()=> {Finish();})
            
       </script>
     </body>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+
+    </head>
+    <body>
+        <script>
+          function countpositive (array){
+            let length = 0;
+            array.forEach((value, index) => {
+                if (value >= 0){ length++;
+                    console.log(value, length);
+                }
+                
+            }
+           )
+           return (length);
+          }
+          console.log(countpositive([1, -3, 5]));
+          console.log(countpositive([-2, 3, -5, 7, 10]));
+        </script>
+      
+    </body>
+</html>

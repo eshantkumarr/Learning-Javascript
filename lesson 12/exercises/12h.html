@@ -4,8 +4,8 @@
         <title class="title">Add</title>
     </head>
     <body>
-        <button onclick="++variable; console.log(variable);        ">add</button>
-        <button onclick="--variable; console.log(variable);        ">remove</button>
+        <button class="add">add</button>
+        <button class="remove">remove</button>
         <script>
            
             let variable = 1;     
@@ -21,6 +21,10 @@
             }
             }
            , 1000)
+           document.querySelector('.add').addEventListener('click', ()=> {++variable; console.log(variable); })
+
+           document.querySelector('.remove').addEventListener('click', ()=> {++variable; console.log(variable); })
+
            
            
       </script>

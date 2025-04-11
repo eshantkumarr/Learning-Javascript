@@ -12,15 +12,12 @@
                  <div class= "todoItem-date">${value.date}</div>
                     <button 
                     class="delete-button"
-                    onclick=
-                        "todoListArray3.splice(${index}, 1); rendertodolist3();
-                        localStorage.setItem('todoListArray3', JSON.stringify(todoListArray3));
-                        "
                     >Delete</button>
                     
                 
              `;
             todoHTML += html;
+
         })
         // for (let i = 0; i < todoListArray3.length; i++) {
         //     const todoItem = todoListArray3[i];
@@ -42,6 +39,16 @@
         // }
         document.querySelector('.js-todo-viewer-3').innerHTML = todoHTML;
         
+        // document.querySelectorAll('.delete-button').addEventListener('click', ()=> {
+        //     todoListArray3.splice(index, 1); rendertodolist3();
+        //     localStorage.setItem('todoListArray3', JSON.stringify(todoListArray3));
+        // })
+        document.querySelectorAll('.delete-button').forEach((deletebutton, index) => {
+            deletebutton.addEventListener('click', ()=>{
+                todoListArray3.splice(index, 1); rendertodolist3();
+            localStorage.setItem('todoListArray3', JSON.stringify(todoListArray3));
+            })});
+        }
     }
     function handleTodoList3() {
         const name = document.querySelector('.todoinput-3');
@@ -61,4 +68,5 @@
         date.value  = '';
         rendertodolist3();
     }
-}
+
+document.querySelector('.submit-button').addEventListener('click', () => { handleTodoList3();});

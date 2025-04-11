@@ -5,22 +5,21 @@
 
     </head>
     <body>
-        <button class="button" onclick="
-        Finish() ">Finish</button>
+        <button class="button">Finish</button>
         <script>
                 function Finish(){
                    const button = document.querySelector('.button');
 
                    if(button.innerText === 'Finish'){
                     button.innerText= 'loading';
-                    setTimeout(function(){
+                    setTimeout(()=>{
                         button.innerText= 'finished';
                     },1000);
                    }else{
                     button.innerText='Finish';
                    }
                 }
-           
+           document.querySelector('.button').addEventListener('click', ()=> {Finish();})
       </script>
     </body>
 </html><!--misread the question :(-->
