@@ -1,0 +1,29 @@
+.topbar{
+    display: flex;
+    background-color: rgba(248,85,6,255);
+    height: 117px;
+    align-items: center;
+    
+}
+.logo{
+    height: 40px;
+    width: 127px;
+    display: flex;
+    background-color: rgba(248,85,6,255);
+    margin-right: 70px;
+    margin-top: 0px;
+    border: none;
+}
+.cart{
+    height: 30px;
+    width:   30px;
+    display: flex;
+    background-color: rgba(248,85,6,255);
+    margin-left: 20px;
+    border: none;
+}
+.Search-bar{
+    width: 688px;
+    border: none;
+    height: 45px;
+}
