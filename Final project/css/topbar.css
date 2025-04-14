@@ -3,7 +3,11 @@
     background-color: rgba(248,85,6,255);
     height: 117px;
     align-items: center;
-    
+    top: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    z-index: 50px;
 }
 .logo{
     height: 40px;
@@ -26,4 +30,12 @@
     width: 688px;
     border: none;
     height: 45px;
+}
+.images{
+    margin-top: 130px;
+    display: flex;
+    width: 988px;
+    height: 344px;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
