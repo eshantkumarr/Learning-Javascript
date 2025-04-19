@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Daraz.PK ---CLONE</title>
+        <style>
+            .topbar{
+            display: flex;
+            background-color: rgba(248,85,6,255);
+            height: 117px;
+            align-items: center;
+            top: 0;
+            left: 0;
+            right: 0;
+            position: fixed;
+            z-index: 50px;
+        }
+
+        .logo{
+            height: 40px;
+            width: 127px;
+            display: flex;
+            background-color: rgba(248,85,6,255);
+            margin-right: 70px;
+            margin-top: 0px;
+            border: none;
+        }
+        .cart{
+            height: 30px;
+            width:   30px;
+            display: flex;
+            background-color: rgba(248,85,6,255);
+            margin-left: 20px;
+            border: none;
+        }
+        .Search-bar{
+            width: 688px;
+            border: none;
+            height: 45px;
+
+        }
+        .display{
+            width: 988px;
+            height: 344px;
+            position: relative;
+
+            
+        }
+        .images{
+            /* display: flex;
+            overflow-x: scroll; */
+            position: relative;
+            /* scroll-behavior:smooth;
+            scrollbar-width:none; */
+            z-index: 2;
+            /* scrollbar-width: none; */
+        
+        }
+        .display:hover .images{
+            z-index: 0;
+        }
+        /* .images::-webkit-scrollbar{
+            display: none;
+        } */
+        .display:hover .right,
+        .display:hover .left{
+            opacity: 1;
+        }
+        .right,
+        .left
+        {
+        width: 24px;
+        height: 24px;
+        display: flex;
+        border: 50%;
+        cursor: pointer;
+        position: absolute;
+        top: 45%;
+        background-color: transparent;
+        border: none;
+        z-index: 1;
+        opacity: 0;
+        transition: opacity 0.3s;
+        }
+        .left{
+            left: 10px;
+        }
+        .right{
+            right: 10px;
+        }
+        .middlerow{
+            margin-top: 130px;
+            display: flex;
+            justify-content: center;
+        }
+        .first,
+        .second,
+        .third{
+            display: none;
+            transition: display, 0.3s;
+        }
+        .active{
+            display: block;
+        }
+
+
+
+        
+        </style>
+    </head>
+    <body>
+        <div class="topbar">
+            <button class="logo"><img src="img/logo.png"></button>
+            <input class="Search-bar" type="text" placeholder="Search in Daraz">
+            <button class="cart"><img src="img/cart.png"></button>
+        </div>
+        <div class="middlerow">
+
+            <div class="display">
+            <button class="left" ><img src="img/left.png"></button>
+            <div class="images">
+              <img src="img/bbb.png" class="first">
+              <img src="img/bsp.png" class="second">
+              <img src="img/ena.png"  class="third">
+            </div>
+            <button class="right"><img src="img/right.png"></button>
+            </div>
+            <div><img src="img/ad.png"></div>
+            
+        </div>
+        
+        
+
+    </body>
+    <script> 
+        const image = [document.querySelector('.first'), document.querySelector('.second'), document.querySelector('.third')];
+        let currentIndex = 0;
+        image[currentIndex].classList.add('active');
+        console.log(image[currentIndex]);
+        const right =document.querySelector('.right');
+        const left = document.querySelector('.left');
+        console.log(currentIndex);
+       
+        
+        left.addEventListener('click', () => {
+            if(currentIndex === 0){
+                return;
+            }else{
+                console.log(currentIndex);
+            image[currentIndex].classList.remove('active');
+            currentIndex--;
+            console.log(currentIndex);
+            image[currentIndex].classList.add('active');
+            }
+        })
+        right.addEventListener('click', () => {
+            if(currentIndex < image.length- 1){
+                console.log(currentIndex);
+            image[currentIndex].classList.remove('active');
+                currentIndex++;
+                console.log(currentIndex);
+                image[currentIndex].classList.add('active');
+        }
+        })
+
+        // image[currentIndex].classList.add('.active');
+
+    </script>
+</html>

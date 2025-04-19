@@ -9,6 +9,7 @@
     position: fixed;
     z-index: 50px;
 }
+
 .logo{
     height: 40px;
     width: 127px;
@@ -30,12 +31,61 @@
     width: 688px;
     border: none;
     height: 45px;
+
 }
-.images{
-    margin-top: 130px;
-    display: flex;
+.display{
     width: 988px;
     height: 344px;
-    overflow-x: hidden;
-    overflow-y: scroll;
+    position: relative;
+
+    
 }
+.images{
+    display: flex;
+    overflow-x: scroll;
+    position: relative;
+    scroll-behavior:smooth;
+    scrollbar-width:none;
+    z-index: 2;
+    /* scrollbar-width: none; */
+   
+}
+.display:hover .images{
+    z-index: 0;
+}
+/* .images::-webkit-scrollbar{
+    display: none;
+} */
+.display:hover .right,
+.display:hover .left{
+    opacity: 1;
+}
+.right,
+.left
+{
+   width: 24px;
+   height: 24px;
+   display: none;
+   display: flex;
+   border: 50%;
+   cursor: pointer;
+   position: absolute;
+   top: 45%;
+   background-color: transparent;
+   border: none;
+   z-index: 1;
+   opacity: 0;
+   transition: opacity 0.3s;
+}
+.left{
+    left: 10px;
+}
+.right{
+    right: 10px;
+}
+.middlerow{
+    margin-top: 130px;
+    display: flex;
+    justify-content: center;
+}
+

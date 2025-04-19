@@ -10,8 +10,30 @@
             <input class="Search-bar" type="text" placeholder="Search in Daraz">
             <button class="cart"><img src="img/cart.png"></button>
         </div>
-        <div class="images"><img src="img/bbb.png"><img src="img/bsp.png"><img src="img/ena.png"></div>
+        <div class="middlerow">
+
+            <div class="display">
+            <button class="left"><img src="img/left.png"></button>
+            <div class="images">
+              <img src="img/bbb.png"><img src="img/bsp.png"><img src="img/ena.png">
+            </div>
+            <button class="right"><img src="img/right.png"></button>
+            </div>
+            <div><img src="img/ad.png"></div>
+            
+        </div>
+        
         
 
     </body>
+    <script>
+        const rightbutton = document.querySelector('.right');
+        const leftbutton  = document.querySelector('.left');
+       rightbutton.addEventListener('click', () => {
+            document.querySelector('.images').scrollLeft += 993;
+        })
+        leftbutton.addEventListener('click', () => {
+            document.querySelector('.images').scrollLeft -= 993;
+        })
+    </script>
 </html>
