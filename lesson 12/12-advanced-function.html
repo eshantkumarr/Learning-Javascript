@@ -7,12 +7,12 @@
         <button onclick="//wrtie some javascript" class="js-button">click</button>
         <script>
             const buttonElem = document.querySelector('.js-button');
-            buttonElem.addEventListener('click', () => {buttonElem.innerHTML = 'ckicked';});
+            // buttonElem.addEventListener('click', () => {buttonElem.innerHTML = 'ckicked';});
             const EventListener = () => {
                 buttonElem.innerHTML = 'ckiced2';
             }
             buttonElem.addEventListener('click', EventListener);
-            buttonElem.removeEventListener('click', EventListener);
+            // buttonElem.removeEventListener('click', EventListener);
             //addeventlistener is more preferred than onclicked because we can use multiple of them and can even remove them
             /*
             function ad() {

@@ -5,21 +5,23 @@
     <script>    
         let array = [1,-3,5];
 function minMax(array){
-    let maxvalue = array[0];
-    let minvalue = array[0];
+    const object ={
+        min: array[0],
+        max: array[0]
+    };
     for(i =0; i < array.length; i++){
         const value = array[i];
-        if(value > maxvalue){
-            maxvalue = value;
-        }else if(value < minvalue){
-            minvalue = value;
+        if(value > object.max){
+            object.max = value;
+        }else if(value < object.min){
+            object.min = value;
         }    
      
     }
-    const object ={
-        min: minvalue,
-        max: maxvalue
-    };
+    // const object ={
+    //     min: minvalue,
+    //     max: maxvalue
+    // };
     console.log(object);
 }
 minMax(array);
