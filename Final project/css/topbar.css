@@ -1,3 +1,7 @@
+body {
+  font-family: Roboto, Arial;
+}
+
 .topbar{
     display: flex;
     background-color: rgba(248,85,6,255);
@@ -110,35 +114,49 @@
     display: grid;
     grid-template-columns: repeat(6, 1fr);
   }
-    @media (max-width: 1100px) {
-      .products {
-        grid-template-columns: repeat(5, 1fr);
-      }
+  @media (max-width: 2000px) {
+    .products {
+      grid-template-columns: repeat(7, 1fr);
     }
-
-    @media (max-width: 900px) {
-      .products {
-        grid-template-columns: repeat(4, 1fr);
-      }
+  }
+  
+  /* This @media means when the screen width is 1600px or
+     less, we will divide the grid into 6 columns. */
+  @media (max-width: 1600px) {
+    .products {
+      grid-template-columns: repeat(6, 1fr);
     }
-
-    @media (max-width: 700px) {
-      .products {
-        grid-template-columns: repeat(3, 1fr);
-      }
+  }
+  
+  @media (max-width: 1300px) {
+    .products {
+      grid-template-columns: repeat(5, 1fr);
     }
-
-    @media (max-width: 500px) {
-      .products {
-        grid-template-columns: repeat(2, 1fr);
-      }
+  }
+  
+  @media (max-width: 1000px) {
+    .products {
+      grid-template-columns: repeat(4, 1fr);
     }
-
-    @media (max-width: 400px) {
-      .products {
-        grid-template-columns: repeat(1, 1fr);
-      }
+  }
+  
+  @media (max-width: 800px) {
+    .products {
+      grid-template-columns: repeat(3, 1fr);
     }
+  }
+  
+  @media (max-width: 575px) {
+    .products {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 450px) {
+    .products {
+      grid-template-columns: 1fr;
+    }
+  }
   
   .product{
     display: flex;
@@ -197,4 +215,101 @@
 }
 .product-quantity-selector{
     margin-bottom: 17px;
+}
+.order{
+  width: 388px;
+  /* height: 395px; */
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  position: relative;
+  box-shadow: 0 2px 5px rgba(213, 217, 217, 0.5);
+  padding: 5px;
+  gap: 20px;
+}
+.first-coloumn{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.first-coloumn::before{
+  content: "";
+  position: absolute;
+  left: 25px;
+  bottom: 0;
+  width: 80%;
+  border-bottom: 1px solid rgb(231, 231, 231);
+}
+.gray{
+  color: rgb(180, 180, 180);
+  margin-top: 5px;
+  margin-left: 10px;
+}
+.address{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 5px;
+
+}
+.location-logo{
+  width: 20px;
+  margin-right: 5px;
+  color: gray;
+}
+.address-text{
+  font-size: small;
+}
+.second-couloumn{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+.second-couloumn::before{
+  content: "";
+  position: absolute;
+  left: 25px;
+  bottom: 0;
+  width: 80%;
+  border-bottom: 1px solid rgb(231, 231, 231);
+}
+.prices{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 5px;
+  row-gap: 25px;
+  font-size: small;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  color: gray;
+}
+.rupees{
+  right: 10px;
+  position: absolute;
+  font-size: small;
+  color: gray;
+}
+.second-couloumn-titile{
+  font-size: medium;
+  padding: 5px;
+}
+.third-coloumn{
+  display: flex;
+  position: relative;
+}
+.totoal-rupees{
+  position: absolute;
+  right: 10px;
+  color: rgba(248,85,6,255);
+}
+.place-order-button{
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: rgba(248,85,6,255);
+  color: white;
+  font-size: 30;
 }
