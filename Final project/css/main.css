@@ -1,0 +1,185 @@
+.display{
+    width: 988px;
+    height: 344px;
+    position: relative;
+}
+.images{
+    display: flex;
+    overflow-x: scroll;
+    position: relative;
+    scroll-behavior:smooth;
+    scrollbar-width:none;
+    z-index: 2;
+    /* scrollbar-width: none; */
+   
+}
+.display:hover .images{
+    z-index: 0;
+}
+/* .images::-webkit-scrollbar{
+    display: none;
+} */
+.display:hover .right,
+.display:hover .left{
+    opacity: 1;
+}
+.right,
+.left
+{
+   width: 24px;
+   height: 24px;
+   display: none;
+   display: flex;
+   border: 50%;
+   cursor: pointer;
+   position: absolute;
+   top: 45%;
+   background-color: transparent;
+   border: none;
+   z-index: 1;
+   opacity: 0;
+   transition: opacity 0.3s;
+}
+.left{
+    left: 10px;
+}
+.right{
+    right: 10px;
+}
+.middlerow{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media(max-width:950px){
+  .middlerow{
+    display: none;
+  }
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  .dot {
+    height: 10px;
+    width: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    margin: 0 5px;
+    transition: background-color 0.3s;
+  }
+  .dot.active {
+    background-color: #555;
+  }
+  .products{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+  }
+  @media (max-width: 2000px) {
+    .products {
+      grid-template-columns: repeat(7, 1fr);
+    }
+  }
+  
+  /* This @media means when the screen width is 1600px or
+     less, we will divide the grid into 6 columns. */
+  @media (max-width: 1600px) {
+    .products {
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+  
+  @media (max-width: 1300px) {
+    .products {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+  
+  @media (max-width: 1000px) {
+    .products {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  @media (max-width: 800px) {
+    .products {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media (max-width: 575px) {
+    .products {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 450px) {
+    .products {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .product{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 25px 25px 25px;
+    border-right: 1px solid rgb(231, 231, 231);
+    border-bottom: 1px solid rgb(231, 231, 231);
+    align-items: center;
+  }
+  .product-image {
+    height: 180px;
+    display: flex;
+    margin-bottom: 20px;
+    
+  }
+  .product-discription {
+    margin-bottom: 5px;
+
+  }
+  .product-price{
+    font:700;
+    margin-bottom: 10px;
+    color: rgba(248,85,6,255);
+  }
+  .product-rating{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .product-rating-image{
+    width: 100px;
+    margin-right: 5px;
+  }
+  .addtocart-button{
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 15px;
+    color: black;
+    background-color: yellow;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(213, 217, 217, 0.5);
+    cursor: pointer;
+  }
+  .addtocart-button:hover{
+    border: 1px solid rgb(242, 194, 0);
+  }
+  .addtocart-button:active{
+    box-shadow: none;
+    border: none;
+  }  
+  .status{
+    color: green;
+    opacity: 0;
+}
+
+
