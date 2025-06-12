@@ -1,9 +1,14 @@
 body {
   font-family: Roboto, Arial;
 }
-
+.header{
+  display: flex;
+  justify-content: center;
+}
 .topbar{
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 3fr 70px 1fr;
+    column-gap: 10px;
     background-color: rgba(248,85,6,255);
     height: 117px;
     align-items: center;
@@ -16,28 +21,30 @@ body {
 }
 
 .logo{
-    height: 40px;
-    width: 127px; 
+    height: 40px; 
     display: flex;
     background-color: rgba(248,85,6,255);
     margin-top: 0px;
     border: none;
+    justify-content: center;
 }
 .cart{
     height: 30px;
-    width:   30px;
     display: flex;
     background-color: rgba(248,85,6,255);
     margin-left: 20px;
     border: none;
 }
 .Search-bar{
-    width: 688px;
     border: none;
     height: 45px;
 }
 
 @media (max-width:  500px) {
+  .topbar{
+    grid-template-columns: 110px 200px 70px 30px;
+    column-gap: 5px;
+  }
   .logo {
     width: unset;
   }
@@ -54,3 +61,20 @@ body {
   }
 }
 
+.orders-link {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.returns-text {
+  display: block;
+  font-size: 13px;
+}
+
+.orders-text {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+}
