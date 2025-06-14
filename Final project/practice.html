@@ -3,104 +3,160 @@
     <head>
         <title>Daraz.PK ---CLONE</title>
         <style>
-            .topbar{
-            display: flex;
+          .amazon-header {
             background-color: rgba(248,85,6,255);
-            height: 117px;
-            align-items: center;
-            top: 0;
-            left: 0;
-            right: 0;
-            position: fixed;
-            z-index: 50px;
-        }
+            color: white;
+            padding-left: 15px;
+            padding-right: 15px;
 
-        .logo{
-            height: 40px;
-            width: 127px;
-            display: flex;
-            background-color: rgba(248,85,6,255);
-            margin-right: 70px;
-            margin-top: 0px;
-            border: none;
-        }
-        .cart{
-            height: 30px;
-            width:   30px;
-            display: flex;
-            background-color: rgba(248,85,6,255);
-            margin-left: 20px;
-            border: none;
-        }
-        .Search-bar{
-            width: 688px;
-            border: none;
-            height: 45px;
+             display: flex;
+             align-items: center;
+             justify-content: space-between;
 
-        }
-        .display{
-            width: 988px;
-            height: 344px;
-            position: relative;
+             position: fixed;
+             top: 0;
+    left: 0;
+     right: 0;
+  height: 60px;
+}
 
-            
-        }
-        .images{
-            /* display: flex;
-            overflow-x: scroll; */
-            position: relative;
-            /* scroll-behavior:smooth;
-            scrollbar-width:none; */
-            z-index: 2;
-            /* scrollbar-width: none; */
-        
-        }
-        .display:hover .images{
-            z-index: 0;
-        }
-        /* .images::-webkit-scrollbar{
-            display: none;
-        } */
-        .display:hover .right,
-        .display:hover .left{
-            opacity: 1;
-        }
-        .right,
-        .left
-        {
-        width: 24px;
-        height: 24px;
-        display: flex;
-        border: 50%;
-        cursor: pointer;
-        position: absolute;
-        top: 45%;
-        background-color: transparent;
-        border: none;
-        z-index: 1;
-        opacity: 0;
-        transition: opacity 0.3s;
-        }
-        .left{
-            left: 10px;
-        }
-        .right{
-            right: 10px;
-        }
-        .middlerow{
-            margin-top: 130px;
-            display: flex;
-            justify-content: center;
-        }
-        .first,
-        .second,
-        .third{
-            display: none;
-            transition: display, 0.3s;
-        }
-        .active{
-            display: block;
-        }
+.amazon-header-left-section {
+  width: 180px;
+}
+
+@media (max-width: 800px) {
+  .amazon-header-left-section {
+    width: unset;
+  }
+}
+
+.header-link {
+  display: inline-block;
+  padding: 6px;
+  border-radius: 2px;
+  cursor: pointer;
+  text-decoration: none;
+  border: 1px solid rgba(0, 0, 0, 0);
+}
+
+.header-link:hover {
+  border: 1px solid white;
+}
+
+.amazon-logo {
+  width: 100px;
+  margin-top: 5px;
+}
+
+.amazon-mobile-logo {
+  display: none;
+}
+
+@media (max-width: 575px) {
+  .amazon-logo {
+    display: none;
+  }
+
+  .amazon-mobile-logo {
+    display: block;
+    height: 35px;
+    margin-top: 5px;
+  }
+}
+
+.amazon-header-middle-section {
+  flex: 1;
+  max-width: 850px;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: flex;
+}
+
+.search-bar {
+  flex: 1;
+  width: 0;
+  font-size: 16px;
+  height: 38px;
+  padding-left: 15px;
+  border: none;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.search-button {
+  background-color: #fff;
+  border: none;
+  width: 45px;
+  height: 40px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  flex-shrink: 0;
+}
+
+.search-icon {
+  height: 22px;
+  margin-left: 2px;
+  margin-top: 3px;
+}
+
+.amazon-header-right-section {
+  width: 180px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: end;
+}
+
+.orders-link {
+  color: white;
+}
+
+.returns-text {
+  display: block;
+  font-size: 13px;
+}
+
+.orders-text {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.cart-link {
+  color: white;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.cart-icon {
+  
+  height: 30px;
+}
+
+.cart-text {
+  margin-top: 12px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.cart-quantity {
+    color: rgb(240, 136, 4);
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 14px;
+  min-width: 14px;
+
+  position: absolute;
+  top: 4px;
+  left: 29px;
+  
+  text-align: center;
+  text-align: center;
+  background-color: white;
+  border-radius: 50%;
+}
 
 
 
@@ -108,11 +164,37 @@
         </style>
     </head>
     <body>
-        <div class="topbar">
-            <button class="logo"><img src="img/logo.png"></button>
-            <input class="Search-bar" type="text" placeholder="Search in Daraz">
-            <button class="cart"><img src="img/cart.png"></button>
-        </div>
+        <div class="amazon-header">
+            <div class="amazon-header-left-section">
+              <a href="daraz.html" class="header-link">
+                <img class="amazon-logo"
+                  src="images/logo.png">
+                <img class="amazon-mobile-logo"
+                  src="images/mobile-logo.png">
+              </a>
+            </div>
+      
+            <div class="amazon-header-middle-section">
+              <input class="search-bar" type="text" placeholder="Search">
+      
+              <button class="search-button">
+                <img class="search-icon" src="images/icons/search-icon.png">
+              </button>
+            </div>
+      
+            <div class="amazon-header-right-section">
+              <a class="orders-link header-link" href="orders.html">
+                <span class="returns-text">Returns</span>
+                <span class="orders-text">& Orders</span>
+              </a>
+      
+              <a class="cart-link header-link" href="checkout.html">
+                <img class="cart-icon" src="images/cart.png">
+                <div class="cart-quantity">3</div>
+                
+              </a>
+            </div>
+          </div>
         <div class="middlerow">
 
             <div class="display">
