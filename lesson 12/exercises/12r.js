@@ -5,7 +5,7 @@ let score = JSON.parse(localStorage.getItem('score')) || {
 };
 let isAutoPlaying = false;
 let intervalId;
-updateScore()
+updateScore();
 
 function autoplay(){
     if(!isAutoPlaying){

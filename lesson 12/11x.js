@@ -19,32 +19,16 @@
             todoHTML += html;
 
         })
-        // for (let i = 0; i < todoListArray3.length; i++) {
-        //     const todoItem = todoListArray3[i];
-        //     const html = 
-        //     `
-        //         <div class= "todoItem-name">${todoItem.name}</div>
-        //          <div class= "todoItem-date">${todoItem.date}</div>
-        //             <button 
-        //             class="delete-button"
-        //             onclick=
-        //                 "todoListArray3.splice(${i}, 1); rendertodolist3();
-        //                 localStorage.setItem('todoListArray3', JSON.stringify(todoListArray3));
-        //                 "
-        //             >Delete</button>
-                    
-                
-        //      `;
-        //     todoHTML += html;
-        // }
+    
         document.querySelector('.js-todo-viewer-3').innerHTML = todoHTML;
         
         // document.querySelectorAll('.delete-button').addEventListener('click', ()=> {
         //     todoListArray3.splice(index, 1); rendertodolist3();
         //     localStorage.setItem('todoListArray3', JSON.stringify(todoListArray3));
         // })
-        document.querySelectorAll('.delete-button').forEach((deletebutton, index) => {
-            deletebutton.addEventListener('click', ()=>{
+        document.querySelectorAll('.delete-button').forEach((single, index) => {
+            console.log(single);
+            single.addEventListener('click', ()=>{
                 todoListArray3.splice(index, 1); rendertodolist3();
             localStorage.setItem('todoListArray3', JSON.stringify(todoListArray3));
             })});

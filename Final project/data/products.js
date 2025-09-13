@@ -723,7 +723,7 @@ document.querySelectorAll('.js-addtocart').forEach((button) => {
     }
     console.log(cart);
    
-    document.querySelector('.cart-quantity').innerHTML= cartQuantity;
+    document.querySelector('.cart-quantity').innerHTML= cart.length;
   });
 
   
