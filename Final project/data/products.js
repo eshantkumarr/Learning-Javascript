@@ -701,7 +701,6 @@ cart.forEach((item)=> {
   cartQuantity += item.quantity;
 });
 
-
 document.querySelectorAll('.js-addtocart').forEach((button) => {
   button.addEventListener('click', ()=> {
     const productId= button.dataset.productId;
