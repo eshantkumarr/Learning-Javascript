@@ -189,8 +189,18 @@
     border: none;
   }  
   .status{
-    color: green;
-    opacity: 0;
+    color: rgb(6, 125, 98);
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  opacity: 0;
+  margin-right: 120px;
+  margin-top: 10px;
+}
+.added-image{
+  height: 20px;
+  margin-right: 5px;
 }
 .limit-to-2-lines{
 display: -webkit-box;

@@ -658,7 +658,24 @@ const products = [
       "apparel",
       "mens"
     ]
+  },
+  {
+    id: "id1",
+    image: "images/products/backpack.jpg",
+    name: "Unisex Backpack for School",
+    rating: {
+      stars: 4.5,
+      count: 3157
+    },
+    priceCents: 30000,
+    keywords: [
+      "School",
+      "bag",
+      "backpack",
+      "unisex"
+    ]
   }
+
 ];
 let productsHTML = '';
 
@@ -673,7 +690,7 @@ products.forEach((product) => {
                         <div class="product-rating"><img  class="product-rating-image"   src="images/ratings/rating-${product.rating.stars * 10}.png"> ${product.rating.count}</div>
                         <div class="product-price">${(product.priceCents / 100).toFixed(2)}</div>
                         <div class="product-quantity-selector">
-                            <select id="product-quantity-selector">
+                            <select id="product-quantity-selector" class = "js-quantity-selector-${product.id}">
                                 <option selected="" value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -687,7 +704,7 @@ products.forEach((product) => {
                             </select> 
                         </div>
                     </div>
-                    <div class="status">Added</div>
+                    <div class="status js-status-${product.id}"><img  class="added-image"   src="images/icons/checkmark.png">Added</div>
                     <div class="addtocart-button js-addtocart" data-product-id="${product.id}">Add to Cart</div>
       </div>
   `
@@ -697,14 +714,13 @@ products.forEach((product) => {
 // console.log(productsHTML);
 document.querySelector('.products').innerHTML = productsHTML;
 
-cart.forEach((item)=> {
-  cartQuantity += item.quantity;
-});
 
 document.querySelectorAll('.js-addtocart').forEach((button) => {
   button.addEventListener('click', ()=> {
+    
     const productId= button.dataset.productId;
     let existingItem;
+    const productQuantity = Number(document.querySelector(`.js-quantity-selector-${productId}`).value);
     cart.forEach((item)=>{
       // console.log(item);
       
@@ -713,16 +729,26 @@ document.querySelectorAll('.js-addtocart').forEach((button) => {
       }
       });
       if(existingItem){
-        existingItem.quantity++;
+        existingItem.quantity+= productQuantity;
       }else{
       cart.push({
         productId: productId,
-        quantity: 1
+        quantity: productQuantity
       });
     }
     console.log(cart);
    
-    document.querySelector('.cart-quantity').innerHTML= cart.length;
+   
+
+    let cartQuantity = 0;
+cart.forEach((item)=> {
+  cartQuantity += item.quantity;
+});
+
+ document.querySelector('.cart-quantity').innerHTML= cartQuantity;
+ 
+
+ 
   });
 
   
